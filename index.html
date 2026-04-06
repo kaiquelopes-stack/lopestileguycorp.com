@@ -34,7 +34,7 @@
       padding: 0 24px;
     }
 
-    /* HERO */
+    /* ===== HERO / TOPO DO SITE ===== */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -56,15 +56,16 @@
       max-width: 560px;
     }
 
+    /* nome da empresa pequeno acima do titulo principal */
     .small-label {
-  display: inline-block;
-  font-size: 16px;        /* maior */
-  letter-spacing: 3px;    /* mais espaçado = mais premium */
-  text-transform: uppercase;
-  color: #eaeaea;         /* mais visível */
-  margin-bottom: 22px;
-  font-weight: 600;       /* mais forte */
-}
+      display: inline-block;
+      font-size: 16px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #eaeaea;
+      margin-bottom: 22px;
+      font-weight: 600;
+    }
 
     .hero h1 {
       font-size: 58px;
@@ -76,13 +77,13 @@
     .hero h2 {
       font-size: 22px;
       font-weight: 400;
-      margin: 0 0 22px;
+      margin: 0 0 20px;
       color: #e6e6e6;
     }
 
     .hero p {
-      font-size: 18px;
-      margin: 0 0 28px;
+      font-size: 17px;
+      margin: 0 0 24px;
       color: #ededed;
       max-width: 500px;
     }
@@ -90,7 +91,7 @@
     .hero-features {
       list-style: none;
       padding: 0;
-      margin: 0 0 32px;
+      margin: 0 0 30px;
     }
 
     .hero-features li {
@@ -105,37 +106,44 @@
       flex-wrap: wrap;
     }
 
-    .btn-primary,
+    /* BOTÃO PRINCIPAL */
+    .btn-primary {
+      display: inline-block;
+      padding: 15px 24px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s ease;
+      background: #f2f2f2;
+      color: #111;
+      border: 1px solid #dcdcdc;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+
+    .btn-primary:hover {
+      background: #e6e6e6;
+    }
+
+    /* BOTÃO SECUNDÁRIO */
     .btn-secondary {
       display: inline-block;
       padding: 15px 24px;
       border-radius: 10px;
       font-size: 15px;
       font-weight: bold;
-      transition: 0.2s ease;
       cursor: pointer;
-    }
-
-    .btn-primary {
-      background: #fff;
-      color: #111;
-      border: none;
-    }
-
-    .btn-primary:hover {
-      opacity: 0.92;
-    }
-
-    .btn-secondary {
-      background: transparent;
+      transition: 0.2s ease;
+      background: rgba(255,255,255,0.08);
       color: #fff;
-      border: 1px solid rgba(255,255,255,0.4);
+      border: 1px solid rgba(255,255,255,0.6);
     }
 
     .btn-secondary:hover {
-      background: rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.15);
     }
 
+    /* imagem principal do topo */
     .hero-right {
       flex: 1;
       min-width: 320px;
@@ -145,7 +153,7 @@
         url('https://images.unsplash.com/photo-1600566752227-8f3b5dd63fcb?auto=format&fit=crop&w=1400&q=80') center center / cover no-repeat;
     }
 
-    /* SECTION BASE */
+    /* ===== SEÇÕES GERAIS ===== */
     .section {
       padding: 80px 0;
     }
@@ -159,49 +167,49 @@
     }
 
     .section-title {
-      font-size: 38px;
-      margin: 0 0 14px;
+      font-size: 36px;
+      margin: 0 0 12px;
       text-align: center;
       color: #111;
     }
 
     .section-subtitle {
-      max-width: 760px;
-      margin: 0 auto 42px;
+      max-width: 720px;
+      margin: 0 auto 36px;
       text-align: center;
       color: #666;
-      font-size: 17px;
+      font-size: 16px;
     }
 
-    /* ABOUT */
+    /* ===== ABOUT ===== */
     .about-grid {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
-      gap: 36px;
+      gap: 32px;
       align-items: center;
     }
 
     .about-text h3 {
       font-size: 28px;
-      margin: 0 0 18px;
+      margin: 0 0 16px;
     }
 
     .about-text p {
       color: #555;
       font-size: 17px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .about-card {
       background: #f7f7f7;
       border-radius: 16px;
-      padding: 32px;
+      padding: 28px;
       box-shadow: 0 8px 24px rgba(0,0,0,0.05);
     }
 
     .about-card-title {
       font-size: 20px;
-      margin: 0 0 18px;
+      margin: 0 0 16px;
       color: #111;
     }
 
@@ -212,25 +220,25 @@
     }
 
     .about-card li {
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
-    /* WHY CHOOSE US */
+    /* ===== DIFERENCIAIS ===== */
     .cards-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 22px;
     }
 
     .info-card {
       background: #fff;
       border-radius: 16px;
-      padding: 28px;
+      padding: 26px;
       box-shadow: 0 10px 26px rgba(0,0,0,0.06);
     }
 
     .info-card h3 {
-      margin: 0 0 12px;
+      margin: 0 0 10px;
       font-size: 22px;
       color: #111;
     }
@@ -238,10 +246,10 @@
     .info-card p {
       margin: 0;
       color: #666;
-      font-size: 16px;
+      font-size: 15px;
     }
 
-    /* GALLERY */
+    /* ===== GALERIA ===== */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -255,6 +263,7 @@
       box-shadow: 0 10px 24px rgba(0,0,0,0.05);
     }
 
+    /* caixa cinza temporaria até você trocar pela foto real */
     .gallery-placeholder {
       height: 280px;
       display: flex;
@@ -267,6 +276,14 @@
       padding: 20px;
     }
 
+    /* caso você coloque imagem real depois */
+    .gallery-photo {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+
     .gallery-caption {
       padding: 16px 18px;
       background: #fff;
@@ -275,7 +292,7 @@
 
     .gallery-caption h4 {
       margin: 0 0 6px;
-      font-size: 18px;
+      font-size: 17px;
       color: #111;
     }
 
@@ -285,7 +302,7 @@
       font-size: 14px;
     }
 
-    /* FORM */
+    /* ===== FORMULÁRIO ===== */
     .quote-wrapper {
       max-width: 1000px;
       margin: 0 auto;
@@ -355,7 +372,7 @@
       background: #2a2a2a;
     }
 
-    /* FOOTER */
+    /* ===== RODAPÉ ===== */
     .footer {
       background: #111;
       color: #d6d6d6;
@@ -364,7 +381,7 @@
       font-size: 14px;
     }
 
-    /* WHATSAPP TEST BUTTON */
+    /* ===== BOTÃO WHATSAPP TESTE ===== */
     .whatsapp-float {
       position: fixed;
       right: 20px;
@@ -386,7 +403,7 @@
       opacity: 0.92;
     }
 
-    /* RESPONSIVE */
+    /* ===== RESPONSIVO ===== */
     @media (max-width: 992px) {
       .about-grid,
       .cards-grid,
@@ -395,7 +412,7 @@
       }
 
       .hero h1 {
-        font-size: 48px;
+        font-size: 46px;
       }
     }
 
@@ -409,15 +426,15 @@
       }
 
       .hero h1 {
-        font-size: 42px;
+        font-size: 40px;
       }
 
       .hero h2 {
-        font-size: 20px;
+        font-size: 19px;
       }
 
       .hero p {
-        font-size: 17px;
+        font-size: 16px;
       }
 
       .section {
@@ -443,15 +460,18 @@
 </head>
 <body>
 
-  <!-- HERO -->
+  <!-- ===================================================== -->
+  <!-- TOPO DO SITE / HERO                                   -->
+  <!-- A imagem principal do topo está na classe .hero-right -->
+  <!-- ===================================================== -->
   <section class="hero">
     <div class="hero-left">
       <div class="hero-content">
-        <div class="small-label">Lopes Tile Guy Corp</div>
+        <div class="small-label">LOPES TILE GUY CORP</div>
         <h1>Professional Tile Installation in Massachusetts</h1>
         <h2>Reliable craftsmanship for renovations, new installations, and repairs.</h2>
         <p>
-          We deliver clean, detailed, and high-quality tile work for residential and commercial spaces with professionalism and care.
+          Clean, detailed, and high-quality tile work for residential and commercial spaces.
         </p>
 
         <ul class="hero-features">
@@ -470,16 +490,18 @@
     <div class="hero-right"></div>
   </section>
 
-  <!-- ABOUT -->
+  <!-- ===================================================== -->
+  <!-- ABOUT                                                 -->
+  <!-- ===================================================== -->
   <section id="about" class="section section-white">
     <div class="container about-grid">
       <div class="about-text">
         <h3>About Us</h3>
         <p>
-          At Lopes Tile Guy Corp, we are committed to delivering quality tile work with precision, professionalism, and care. With years of hands-on experience, we take pride in providing dependable service and lasting results for every project.
+          At Lopes Tile Guy Corp, we are committed to quality work, professionalism, and attention to detail.
         </p>
         <p>
-          Whether it is a renovation, a new installation, or a repair, we approach every job with dedication, strong work ethic, and close attention to detail. Our goal is to make sure every client receives clean, durable, and beautiful work they can trust.
+          With years of experience, we are dedicated, hardworking, and focused on delivering clean and reliable results.
         </p>
       </div>
 
@@ -487,89 +509,115 @@
         <h4 class="about-card-title">What You Can Expect</h4>
         <ul>
           <li>Professional service from start to finish</li>
-          <li>Years of experience in tile installation and finishing</li>
-          <li>Hardworking, dedicated, and detail-focused workmanship</li>
-          <li>Clear communication and reliable scheduling</li>
+          <li>Years of experience in tile installation</li>
+          <li>Hardworking and detail-focused workmanship</li>
+          <li>Reliable communication and scheduling</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- WHY CHOOSE US -->
+  <!-- ===================================================== -->
+  <!-- WHY CHOOSE US / DIFERENCIAIS                          -->
+  <!-- ===================================================== -->
   <section class="section section-light">
     <div class="container">
       <h2 class="section-title">Why Choose Us</h2>
       <p class="section-subtitle">
-        We focus on quality workmanship, dependable service, and results that look clean and last.
+        Quality workmanship, dependable service, and results that last.
       </p>
 
       <div class="cards-grid">
         <div class="info-card">
           <h3>Experienced</h3>
-          <p>
-            Years of hands-on tile installation experience with a strong focus on quality, precision, and durability.
-          </p>
+          <p>Years of hands-on tile installation experience with strong attention to quality.</p>
         </div>
 
         <div class="info-card">
           <h3>Reliable</h3>
-          <p>
-            We value professionalism, communication, and showing up ready to complete every project the right way.
-          </p>
+          <p>Professional service, clear communication, and commitment to doing the job right.</p>
         </div>
 
         <div class="info-card">
           <h3>Detail-Oriented</h3>
-          <p>
-            From layout to finishing, we pay close attention to the details that make the final result stand out.
-          </p>
+          <p>Clean finishes and careful work that make the final result stand out.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- GALLERY PLACEHOLDER -->
+  <!-- ===================================================== -->
+  <!-- GALERIA                                               -->
+  <!-- Você pode trocar cada bloco cinza por uma foto real   -->
+  <!-- Procure por: PHOTO SPACE 1, PHOTO SPACE 2, PHOTO 3    -->
+  <!-- ===================================================== -->
   <section class="section section-white">
     <div class="container">
       <h2 class="section-title">Our Work</h2>
       <p class="section-subtitle">
-        Add your project photos below. These placeholders are ready for you to replace with real images of your work.
+        A few examples of our projects.
       </p>
 
       <div class="gallery-grid">
+
+        <!-- FOTO 1 -->
         <div class="gallery-item">
-          <div class="gallery-placeholder">Photo Space 1<br>Bathroom / Shower Project</div>
+          <!-- este bloco cinza é o espaço da primeira foto -->
+          <!-- quando quiser colocar imagem real, substitua a div abaixo por uma tag img -->
+          <div class="gallery-placeholder">PHOTO SPACE 1</div>
+
+          <!-- exemplo para trocar depois:
+          <img class="gallery-photo" src="COLE_AQUI_O_LINK_DA_SUA_IMAGEM_1" alt="Project 1">
+          -->
+
           <div class="gallery-caption">
-            <h4>Project Title</h4>
-            <p>Add a short description here.</p>
+            <h4>Bathroom Project</h4>
+            <p>Add your description here.</p>
           </div>
         </div>
 
+        <!-- FOTO 2 -->
         <div class="gallery-item">
-          <div class="gallery-placeholder">Photo Space 2<br>Floor Installation</div>
+          <!-- este bloco cinza é o espaço da segunda foto -->
+          <div class="gallery-placeholder">PHOTO SPACE 2</div>
+
+          <!-- exemplo para trocar depois:
+          <img class="gallery-photo" src="COLE_AQUI_O_LINK_DA_SUA_IMAGEM_2" alt="Project 2">
+          -->
+
           <div class="gallery-caption">
-            <h4>Project Title</h4>
-            <p>Add a short description here.</p>
+            <h4>Floor Installation</h4>
+            <p>Add your description here.</p>
           </div>
         </div>
 
+        <!-- FOTO 3 -->
         <div class="gallery-item">
-          <div class="gallery-placeholder">Photo Space 3<br>Kitchen / Backsplash</div>
+          <!-- este bloco cinza é o espaço da terceira foto -->
+          <div class="gallery-placeholder">PHOTO SPACE 3</div>
+
+          <!-- exemplo para trocar depois:
+          <img class="gallery-photo" src="COLE_AQUI_O_LINK_DA_SUA_IMAGEM_3" alt="Project 3">
+          -->
+
           <div class="gallery-caption">
-            <h4>Project Title</h4>
-            <p>Add a short description here.</p>
+            <h4>Kitchen / Backsplash</h4>
+            <p>Add your description here.</p>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- QUOTE FORM -->
+  <!-- ===================================================== -->
+  <!-- FORMULÁRIO DE ORÇAMENTO                               -->
+  <!-- ===================================================== -->
   <section id="quote" class="section section-light">
     <div class="container">
       <h2 class="section-title">Get a Free Quote</h2>
       <p class="section-subtitle">
-        Tell us about your project and we will get back to you as soon as possible.
+        Tell us about your project and we will get back to you soon.
       </p>
 
       <div class="quote-wrapper">
@@ -628,15 +676,20 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ===================================================== -->
+  <!-- RODAPÉ                                                -->
+  <!-- ===================================================== -->
   <footer class="footer">
     Lopes Tile Guy Corp • Massachusetts
   </footer>
 
-  <!-- WHATSAPP TEST -->
+  <!-- ===================================================== -->
+  <!-- WHATSAPP TESTE                                        -->
+  <!-- troque o numero 15555555555 pelo seu numero real      -->
+  <!-- ===================================================== -->
   <a
     class="whatsapp-float"
-    href="https://wa.me/19783982397?text=Hello%2C%20I%20visited%20your%20website%20and%20would%20like%20a%20quote."
+    href="https://wa.me/15555555555?text=Hello%2C%20I%20visited%20your%20website%20and%20would%20like%20a%20quote."
     target="_blank"
     aria-label="WhatsApp"
     title="WhatsApp"
