@@ -38,24 +38,30 @@
     .hero {
       min-height: 100vh;
       display: flex;
-      flex-wrap: nowrap;
-      align-items: stretch;
       background: #fff;
     }
 
-    .hero-left,
-    .hero-right {
-      width: 50%;
-      flex: 0 0 50%;
-    }
-
     .hero-left {
-      min-width: 0;
+      width: 50%;
       background: linear-gradient(135deg, #111 0%, #2a2a2a 100%);
       color: white;
       padding: 70px 50px;
       display: flex;
       align-items: center;
+    }
+
+    .hero-right {
+      width: 50%;
+      height: 100vh;
+      overflow: hidden;
+      background: #d9d9d9;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .hero-content {
@@ -111,6 +117,7 @@
       flex-wrap: wrap;
     }
 
+    /* BOTÃO PRINCIPAL */
     .btn-primary {
       display: inline-block;
       padding: 15px 24px;
@@ -129,6 +136,7 @@
       background: #e6e6e6;
     }
 
+    /* BOTÃO SECUNDÁRIO */
     .btn-secondary {
       display: inline-block;
       padding: 15px 24px;
@@ -144,16 +152,6 @@
 
     .btn-secondary:hover {
       background: rgba(255,255,255,0.15);
-    }
-
-    .hero-right {
-      min-width: 0;
-      min-height: 100vh;
-      background-color: #d9d9d9;
-      background-image: url('https://res.cloudinary.com/doq2scy52/image/upload/v1775520055/Banheiro_moderno_e_sofisticado_mpcjt6.png');
-      background-position: center center;
-      background-size: cover;
-      background-repeat: no-repeat;
     }
 
     /* ===== SEÇÕES GERAIS ===== */
@@ -273,18 +271,6 @@
       display: block;
     }
 
-    .gallery-placeholder {
-      height: 280px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #dcdcdc, #efefef);
-      color: #666;
-      font-size: 16px;
-      text-align: center;
-      padding: 20px;
-    }
-
     .gallery-caption {
       padding: 16px 18px;
       background: #fff;
@@ -382,7 +368,7 @@
       font-size: 14px;
     }
 
-    /* ===== BOTÃO WHATSAPP TESTE ===== */
+    /* ===== BOTÃO WHATSAPP ===== */
     .whatsapp-float {
       position: fixed;
       right: 20px;
@@ -412,28 +398,20 @@
         grid-template-columns: 1fr;
       }
 
-      .hero {
-        min-height: auto;
-      }
-
       .hero h1 {
         font-size: 46px;
-      }
-
-      .hero-left,
-      .hero-right {
-        width: 100%;
-        flex: 1 1 100%;
-      }
-
-      .hero-right {
-        min-height: 420px;
       }
     }
 
     @media (max-width: 768px) {
       .hero {
         flex-direction: column;
+        min-height: auto;
+      }
+
+      .hero-left,
+      .hero-right {
+        width: 100%;
       }
 
       .hero-left {
@@ -453,8 +431,7 @@
       }
 
       .hero-right {
-        min-height: 340px;
-        background-position: center center;
+        height: 340px;
       }
 
       .section {
@@ -504,7 +481,13 @@
       </div>
     </div>
 
-    <div class="hero-right"></div>
+    <div class="hero-right">
+      <img
+        src="https://res.cloudinary.com/doq2scy52/image/upload/v1775520055/Banheiro_moderno_e_sofisticado_mpcjt6.png"
+        alt="Modern bathroom tile installation"
+        class="hero-image"
+      />
+    </div>
   </section>
 
   <!-- ABOUT -->
