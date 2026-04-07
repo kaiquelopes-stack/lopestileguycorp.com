@@ -8,6 +8,8 @@
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     html {
@@ -15,11 +17,15 @@
     }
 
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background: #f4f4f4;
+      background: #f5f5f3;
       color: #111;
       line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
     }
 
     a {
@@ -29,12 +35,12 @@
 
     .container {
       width: 100%;
-      max-width: 1200px;
+      max-width: 1240px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
-    /* ===== HERO / TOPO DO SITE ===== */
+    /* ===== HERO ===== */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -43,18 +49,160 @@
 
     .hero-left {
       width: 50%;
-      background: linear-gradient(135deg, #111 0%, #2a2a2a 100%);
-      color: white;
-      padding: 70px 50px;
+      background:
+        linear-gradient(135deg, rgba(17,17,17,0.98) 0%, rgba(34,34,34,0.96) 100%);
+      color: #fff;
+      padding: 80px 64px;
       display: flex;
       align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-left::before {
+      content: "";
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+      top: -80px;
+      right: -100px;
+      filter: blur(4px);
+    }
+
+    .hero-left::after {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.03);
+      bottom: -80px;
+      left: -60px;
+    }
+
+    .hero-content {
+      max-width: 580px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .small-label {
+      display: inline-block;
+      font-size: 13px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #d8d8d8;
+      margin-bottom: 24px;
+      font-weight: 700;
+      padding: 8px 14px;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .hero h1 {
+      font-size: 64px;
+      line-height: 1.02;
+      margin-bottom: 18px;
+      letter-spacing: -1px;
+    }
+
+    .hero h2 {
+      font-size: 23px;
+      font-weight: 400;
+      margin-bottom: 22px;
+      color: #e8e8e8;
+      max-width: 520px;
+    }
+
+    .hero p {
+      font-size: 17px;
+      margin-bottom: 28px;
+      color: #ededed;
+      max-width: 520px;
+    }
+
+    .hero-features {
+      list-style: none;
+      margin-bottom: 34px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .hero-features li {
+      color: #f2f2f2;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero-features li::before {
+      content: "◆";
+      font-size: 10px;
+      color: #d4b06a;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 15px 24px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      transition: all 0.25s ease;
+    }
+
+    .btn-primary {
+      background: #f3f0ea;
+      color: #111;
+      border: 1px solid #e6dfd2;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.16);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: #ffffff;
+      box-shadow: 0 16px 34px rgba(0,0,0,0.18);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.28);
+      backdrop-filter: blur(4px);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.14);
     }
 
     .hero-right {
       width: 50%;
       height: 100vh;
       overflow: hidden;
-      background: #d9d9d9;
+      background: #ddd;
+      position: relative;
+    }
+
+    .hero-right::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to left, rgba(0,0,0,0.08), rgba(0,0,0,0.02));
+      pointer-events: none;
     }
 
     .hero-image {
@@ -64,99 +212,9 @@
       display: block;
     }
 
-    .hero-content {
-      max-width: 560px;
-    }
-
-    .small-label {
-      display: inline-block;
-      font-size: 16px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #eaeaea;
-      margin-bottom: 22px;
-      font-weight: 600;
-    }
-
-    .hero h1 {
-      font-size: 58px;
-      line-height: 1.05;
-      margin: 0 0 18px;
-      letter-spacing: 1px;
-    }
-
-    .hero h2 {
-      font-size: 22px;
-      font-weight: 400;
-      margin: 0 0 20px;
-      color: #e6e6e6;
-    }
-
-    .hero p {
-      font-size: 17px;
-      margin: 0 0 24px;
-      color: #ededed;
-      max-width: 500px;
-    }
-
-    .hero-features {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 30px;
-    }
-
-    .hero-features li {
-      margin-bottom: 10px;
-      color: #f1f1f1;
-      font-size: 16px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    /* BOTÃO PRINCIPAL */
-    .btn-primary {
-      display: inline-block;
-      padding: 15px 24px;
-      border-radius: 10px;
-      font-size: 15px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.2s ease;
-      background: #f2f2f2;
-      color: #111;
-      border: 1px solid #dcdcdc;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-    }
-
-    .btn-primary:hover {
-      background: #e6e6e6;
-    }
-
-    /* BOTÃO SECUNDÁRIO */
-    .btn-secondary {
-      display: inline-block;
-      padding: 15px 24px;
-      border-radius: 10px;
-      font-size: 15px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.2s ease;
-      background: rgba(255,255,255,0.08);
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.6);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.15);
-    }
-
-    /* ===== SEÇÕES GERAIS ===== */
+    /* ===== SEÇÕES ===== */
     .section {
-      padding: 80px 0;
+      padding: 92px 0;
     }
 
     .section-white {
@@ -164,88 +222,114 @@
     }
 
     .section-light {
-      background: #f7f7f7;
+      background: linear-gradient(180deg, #f7f7f5 0%, #f2f2ef 100%);
     }
 
     .section-title {
-      font-size: 36px;
-      margin: 0 0 12px;
+      font-size: 42px;
       text-align: center;
       color: #111;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
     }
 
     .section-subtitle {
-      max-width: 720px;
-      margin: 0 auto 36px;
+      max-width: 760px;
+      margin: 0 auto 42px;
       text-align: center;
       color: #666;
-      font-size: 16px;
+      font-size: 17px;
     }
 
     /* ===== ABOUT ===== */
     .about-grid {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
-      gap: 32px;
-      align-items: center;
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .about-text {
+      padding-right: 10px;
     }
 
     .about-text h3 {
-      font-size: 28px;
-      margin: 0 0 16px;
+      font-size: 30px;
+      margin-bottom: 16px;
+      color: #111;
+      letter-spacing: -0.5px;
     }
 
     .about-text p {
       color: #555;
       font-size: 17px;
-      margin-bottom: 14px;
+      margin-bottom: 15px;
     }
 
     .about-card {
-      background: #f7f7f7;
-      border-radius: 16px;
-      padding: 28px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+      background: linear-gradient(180deg, #ffffff 0%, #f8f8f6 100%);
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 14px 34px rgba(0,0,0,0.07);
+      border: 1px solid #ece9e2;
     }
 
     .about-card-title {
-      font-size: 20px;
-      margin: 0 0 16px;
+      font-size: 22px;
+      margin-bottom: 18px;
       color: #111;
     }
 
     .about-card ul {
-      margin: 0;
       padding-left: 18px;
       color: #555;
     }
 
     .about-card li {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     /* ===== DIFERENCIAIS ===== */
     .cards-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      gap: 24px;
     }
 
     .info-card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 26px;
-      box-shadow: 0 10px 26px rgba(0,0,0,0.06);
+      background: linear-gradient(180deg, #ffffff 0%, #f9f9f8 100%);
+      border-radius: 20px;
+      padding: 30px 28px;
+      box-shadow: 0 14px 34px rgba(0,0,0,0.06);
+      border: 1px solid #ece9e2;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 42px rgba(0,0,0,0.10);
+    }
+
+    .card-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f3efe7;
+      margin-bottom: 18px;
+      color: #111;
+      box-shadow: inset 0 0 0 1px #e8e1d3;
     }
 
     .info-card h3 {
-      margin: 0 0 10px;
-      font-size: 22px;
+      margin-bottom: 10px;
+      font-size: 23px;
       color: #111;
     }
 
     .info-card p {
-      margin: 0;
       color: #666;
       font-size: 15px;
     }
@@ -254,49 +338,56 @@
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      gap: 24px;
     }
 
     .gallery-item {
-      background: #ececec;
-      border-radius: 16px;
+      background: #fff;
+      border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.05);
+      box-shadow: 0 14px 34px rgba(0,0,0,0.06);
+      border: 1px solid #ece9e2;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 42px rgba(0,0,0,0.10);
     }
 
     .gallery-photo {
       width: 100%;
-      height: 280px;
+      height: 300px;
       object-fit: cover;
       display: block;
     }
 
     .gallery-caption {
-      padding: 16px 18px;
+      padding: 18px 20px 20px;
       background: #fff;
-      border-top: 1px solid #eee;
+      border-top: 1px solid #f0ede7;
     }
 
     .gallery-caption h4 {
-      margin: 0 0 6px;
-      font-size: 17px;
+      margin-bottom: 6px;
+      font-size: 18px;
       color: #111;
     }
 
     .gallery-caption p {
-      margin: 0;
       color: #666;
       font-size: 14px;
     }
 
-    /* ===== FORMULÁRIO ===== */
+    /* ===== FORM ===== */
     .quote-wrapper {
-      max-width: 1000px;
+      max-width: 1040px;
       margin: 0 auto;
-      background: #fff;
-      border-radius: 18px;
-      padding: 40px;
-      box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+      background: linear-gradient(180deg, #ffffff 0%, #fbfbfa 100%);
+      border-radius: 24px;
+      padding: 44px;
+      box-shadow: 0 18px 48px rgba(0,0,0,0.08);
+      border: 1px solid #ebe7df;
     }
 
     .quote-form {
@@ -321,7 +412,7 @@
     .form-group label {
       margin-bottom: 8px;
       font-size: 15px;
-      font-weight: 600;
+      font-weight: 700;
       color: #222;
     }
 
@@ -329,68 +420,100 @@
     .form-group select,
     .form-group textarea {
       width: 100%;
-      padding: 14px;
-      border: 1px solid #d7d7d7;
-      border-radius: 10px;
+      padding: 15px 16px;
+      border: 1px solid #ddd8cf;
+      border-radius: 12px;
       font-size: 16px;
       font-family: Arial, sans-serif;
       background: #fff;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #b89a63;
+      box-shadow: 0 0 0 4px rgba(184,154,99,0.12);
     }
 
     .form-group textarea {
-      min-height: 140px;
+      min-height: 150px;
       resize: vertical;
     }
 
     .submit-button {
       width: fit-content;
-      padding: 16px 26px;
+      min-height: 56px;
+      padding: 16px 28px;
       background: #111;
-      color: white;
+      color: #fff;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       font-size: 16px;
-      font-weight: bold;
+      font-weight: 700;
       cursor: pointer;
-      transition: 0.2s ease;
+      transition: all 0.25s ease;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.14);
     }
 
     .submit-button:hover {
-      background: #2a2a2a;
+      transform: translateY(-2px);
+      background: #222;
+      box-shadow: 0 16px 34px rgba(0,0,0,0.18);
     }
 
-    /* ===== RODAPÉ ===== */
+    /* ===== FOOTER ===== */
     .footer {
       background: #111;
-      color: #d6d6d6;
-      padding: 28px 20px;
+      color: #d8d8d8;
+      padding: 32px 20px;
       text-align: center;
       font-size: 14px;
+      letter-spacing: 0.3px;
     }
 
-    /* ===== BOTÃO WHATSAPP ===== */
+    /* ===== WHATSAPP ===== */
     .whatsapp-float {
       position: fixed;
-      right: 20px;
-      bottom: 20px;
+      right: 22px;
+      bottom: 22px;
       background: #25D366;
       color: white;
-      width: 58px;
-      height: 58px;
+      width: 62px;
+      height: 62px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 26px;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.20);
       z-index: 999;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
     }
 
     .whatsapp-float:hover {
-      opacity: 0.92;
+      transform: translateY(-3px) scale(1.03);
+      opacity: 0.98;
+      box-shadow: 0 18px 34px rgba(0,0,0,0.24);
+    }
+
+    .whatsapp-icon {
+      width: 30px;
+      height: 30px;
+      fill: currentColor;
     }
 
     /* ===== RESPONSIVO ===== */
+    @media (max-width: 1100px) {
+      .hero h1 {
+        font-size: 54px;
+      }
+
+      .hero-left {
+        padding: 70px 48px;
+      }
+    }
+
     @media (max-width: 992px) {
       .about-grid,
       .cards-grid,
@@ -400,6 +523,10 @@
 
       .hero h1 {
         font-size: 46px;
+      }
+
+      .hero h2 {
+        font-size: 21px;
       }
     }
 
@@ -415,7 +542,7 @@
       }
 
       .hero-left {
-        padding: 48px 24px;
+        padding: 52px 24px;
       }
 
       .hero h1 {
@@ -431,19 +558,20 @@
       }
 
       .hero-right {
-        height: 340px;
+        height: 360px;
       }
 
       .section {
-        padding: 64px 0;
+        padding: 72px 0;
       }
 
       .section-title {
-        font-size: 30px;
+        font-size: 32px;
       }
 
       .quote-wrapper {
-        padding: 24px;
+        padding: 26px;
+        border-radius: 20px;
       }
 
       .btn-primary,
@@ -452,12 +580,24 @@
         width: 100%;
         text-align: center;
       }
+
+      .whatsapp-float {
+        width: 58px;
+        height: 58px;
+        right: 18px;
+        bottom: 18px;
+      }
+
+      .whatsapp-icon {
+        width: 28px;
+        height: 28px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- TOPO DO SITE / HERO -->
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-left">
       <div class="hero-content">
@@ -469,9 +609,9 @@
         </p>
 
         <ul class="hero-features">
-          <li>✔ Experienced & Detail-Oriented</li>
-          <li>✔ Residential & Commercial Projects</li>
-          <li>✔ Clean Finishes & Reliable Service</li>
+          <li>Experienced and detail-oriented workmanship</li>
+          <li>Residential and commercial tile projects</li>
+          <li>Clean finishes and dependable service</li>
         </ul>
 
         <div class="hero-buttons">
@@ -499,7 +639,7 @@
           At Lopes Tile Guy Corp, we are committed to quality work, professionalism, and attention to detail.
         </p>
         <p>
-          With years of experience, we are dedicated, hardworking, and focused on delivering clean and reliable results.
+          With years of experience, we are dedicated, hardworking, and focused on delivering clean, durable, and reliable results for every project.
         </p>
       </div>
 
@@ -520,38 +660,54 @@
     <div class="container">
       <h2 class="section-title">Why Choose Us</h2>
       <p class="section-subtitle">
-        Quality workmanship, dependable service, and results that last.
+        Quality workmanship, dependable service, and results designed to last.
       </p>
 
       <div class="cards-grid">
         <div class="info-card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 3L20 7V12C20 17 16.5 21 12 22C7.5 21 4 17 4 12V7L12 3Z" stroke="currentColor" stroke-width="1.8"/>
+            </svg>
+          </div>
           <h3>Experienced</h3>
-          <p>Years of hands-on tile installation experience with strong attention to quality.</p>
+          <p>Years of hands-on tile installation experience with strong attention to quality and precision.</p>
         </div>
 
         <div class="info-card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M7 12.5L10.2 15.5L17.5 8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/>
+            </svg>
+          </div>
           <h3>Reliable</h3>
-          <p>Professional service, clear communication, and commitment to doing the job right.</p>
+          <p>Professional service, clear communication, and commitment to doing the job right the first time.</p>
         </div>
 
         <div class="info-card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 19L9 14L12 17L20 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M15 9H20V14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
           <h3>Detail-Oriented</h3>
-          <p>Clean finishes and careful work that make the final result stand out.</p>
+          <p>Clean finishes and careful execution that elevate the final look of every space.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- GALERIA -->
+  <!-- GALLERY -->
   <section class="section section-white">
     <div class="container">
       <h2 class="section-title">Our Work</h2>
       <p class="section-subtitle">
-        A few examples of our projects.
+        A few examples of our recent tile installation projects.
       </p>
 
       <div class="gallery-grid">
-
         <div class="gallery-item">
           <img class="gallery-photo" src="https://res.cloudinary.com/doq2scy52/image/upload/v1775519057/42A40F16-DD0F-4BB1-978A-A240B3809687_FB6F538B-BAE7-4B30-8684-337F1849BB1C_cz0k2w.jpg" alt="Bathroom Tile Installation">
           <div class="gallery-caption">
@@ -564,7 +720,7 @@
           <img class="gallery-photo" src="https://res.cloudinary.com/doq2scy52/image/upload/q_auto/f_auto/v1775518116/d0005e6b-65d5-4573-a2a8-fe33fa7443b0_j75ym3.jpg" alt="Floor Tile Installation">
           <div class="gallery-caption">
             <h4>Floor Tile Installation</h4>
-            <p>Precise alignment and high-quality installation for long-lasting results.</p>
+            <p>Precise alignment and high-quality installation built for lasting performance.</p>
           </div>
         </div>
 
@@ -575,12 +731,11 @@
             <p>Clean, detailed backsplash installation that enhances the overall space.</p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- FORMULÁRIO DE ORÇAMENTO -->
+  <!-- FORM -->
   <section id="quote" class="section section-light">
     <div class="container">
       <h2 class="section-title">Get a Free Quote</h2>
@@ -644,20 +799,24 @@
     </div>
   </section>
 
-  <!-- RODAPÉ -->
+  <!-- FOOTER -->
   <footer class="footer">
     Lopes Tile Guy Corp • Massachusetts
   </footer>
 
-  <!-- WHATSAPP TESTE -->
+  <!-- WHATSAPP -->
   <a
     class="whatsapp-float"
-    href="https://wa.me/15555555555?text=Hello%2C%20I%20visited%20your%20website%20and%20would%20like%20a%20quote."
+    href="https://wa.me/19783982397?text=Hello%2C%20I%20visited%20your%20website%20and%20would%20like%20a%20quote."
     target="_blank"
+    rel="noopener noreferrer"
     aria-label="WhatsApp"
     title="WhatsApp"
   >
-    Ⓦ
+    <svg class="whatsapp-icon" viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M19.11 17.21c-.27-.13-1.58-.78-1.82-.87-.24-.09-.42-.13-.59.14-.18.27-.68.87-.84 1.05-.15.18-.31.2-.58.07-.27-.13-1.12-.41-2.13-1.31-.79-.7-1.32-1.57-1.48-1.84-.15-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.59-1.43-.81-1.96-.21-.51-.43-.44-.59-.45h-.5c-.18 0-.47.07-.72.34-.24.27-.92.9-.92 2.19 0 1.29.94 2.54 1.07 2.72.13.18 1.85 2.83 4.48 3.97.63.27 1.12.43 1.5.55.63.2 1.2.17 1.65.1.5-.07 1.58-.65 1.8-1.28.22-.63.22-1.16.15-1.28-.06-.11-.24-.18-.5-.31Z"/>
+      <path d="M16.01 3.2c-7.06 0-12.78 5.72-12.78 12.78 0 2.25.59 4.45 1.72 6.39L3 29l6.82-1.79a12.72 12.72 0 0 0 6.19 1.58h.01c7.06 0 12.78-5.72 12.78-12.78S23.08 3.2 16.01 3.2Zm0 23.43h-.01a10.6 10.6 0 0 1-5.41-1.49l-.39-.23-4.05 1.06 1.08-3.95-.25-.41a10.58 10.58 0 0 1-1.63-5.61c0-5.88 4.78-10.66 10.67-10.66 2.85 0 5.53 1.11 7.54 3.12a10.59 10.59 0 0 1 3.12 7.54c0 5.88-4.78 10.66-10.67 10.66Z"/>
+    </svg>
   </a>
 
 </body>
