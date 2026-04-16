@@ -389,6 +389,59 @@
       font-size: 14px;
     }
 
+    /* ===== INSTAGRAM ===== */
+    .instagram-section {
+      margin-top: 48px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8f8f6 100%);
+      border: 1px solid #ece9e2;
+      border-radius: 24px;
+      padding: 40px 28px;
+      text-align: center;
+      box-shadow: 0 14px 34px rgba(0,0,0,0.06);
+    }
+
+    .instagram-section h3 {
+      font-size: 30px;
+      margin-bottom: 12px;
+      color: #111;
+      letter-spacing: -0.5px;
+    }
+
+    .instagram-section p {
+      max-width: 720px;
+      margin: 0 auto 24px;
+      color: #666;
+      font-size: 16px;
+    }
+
+    .instagram-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 15px 26px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      background: #111;
+      color: #fff;
+      border: 1px solid #111;
+      transition: all 0.25s ease;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.14);
+    }
+
+    .instagram-button:hover {
+      transform: translateY(-2px);
+      background: #222;
+      box-shadow: 0 16px 34px rgba(0,0,0,0.18);
+    }
+
+    .instagram-note {
+      margin-top: 12px;
+      font-size: 13px;
+      color: #8a8a8a;
+    }
+
     /* ===== FORM ===== */
     .quote-wrapper {
       max-width: 1040px;
@@ -481,6 +534,11 @@
       text-align: center;
       font-size: 14px;
       letter-spacing: 0.3px;
+    }
+
+    .footer a {
+      color: #f3f0ea;
+      font-weight: 700;
     }
 
     /* ===== WHATSAPP ===== */
@@ -583,14 +641,16 @@
         font-size: 32px;
       }
 
-      .quote-wrapper {
+      .quote-wrapper,
+      .instagram-section {
         padding: 26px;
         border-radius: 20px;
       }
 
       .btn-primary,
       .btn-secondary,
-      .submit-button {
+      .submit-button,
+      .instagram-button {
         width: 100%;
         text-align: center;
       }
@@ -633,7 +693,7 @@
 
         <div class="hero-buttons">
           <a href="#quote" class="btn-primary">Get a Free Quote</a>
-          <a href="#about" class="btn-secondary">Learn More</a>
+          <a href="https://www.instagram.com/lopes_tile_guy_corp/" target="_blank" rel="noopener noreferrer" class="btn-secondary">View More on Instagram</a>
         </div>
       </div>
     </div>
@@ -749,6 +809,24 @@
           </div>
         </div>
       </div>
+
+      <div class="instagram-section">
+        <h3>See More of Our Work</h3>
+        <p>
+          Want to explore more of our recent tile installation projects? Visit our Instagram to see more photos, project updates, and completed work.
+        </p>
+        <a
+          href="https://www.instagram.com/lopes_tile_guy_corp/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="instagram-button"
+        >
+          Follow Us on Instagram
+        </a>
+        <p class="instagram-note">
+          More photos and project updates are shared on our Instagram page.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -818,7 +896,10 @@
 
   <!-- FOOTER -->
   <footer class="footer">
-    Lopes Tile Guy Corp • Massachusetts
+    Lopes Tile Guy Corp • Massachusetts •
+    <a href="https://www.instagram.com/lopes_tile_guy_corp/" target="_blank" rel="noopener noreferrer">
+      @lopes_tile_guy_corp
+    </a>
   </footer>
 
   <!-- WHATSAPP -->
